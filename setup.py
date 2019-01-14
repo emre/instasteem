@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='instasteeem',
-    version='0.0.1',
+    version='0.0.2',
     packages=['instasteem'],
     url='https://github.com/emre/instasteem',
     license='MIT',
@@ -14,5 +14,5 @@ setup(
             'instasteem = instasteem.cli:main',
         ],
     },
-    install_requires=['python-slugify',]
+    install_requires=['python-slugify', 'lightsteem', 'requests']
 )

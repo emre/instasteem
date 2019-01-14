@@ -10,7 +10,7 @@ class Sync:
     def __init__(self, client=None, keys=None):
         self.client = client or Client(keys=keys)
 
-    def post(self, username, title, body, tags):
+    def post(self, username, title, body, tags, safe_mode=False):
         """Sync the parsed post into the STEEM blockchain.
 
         :param username: Author on STEEM blockchain
@@ -27,4 +27,7 @@ class Sync:
             "body": body,
             "json_metadata": json.dumps({"tags": tags})
         })
-        self.client.broadcast(post)
+        if safe_mode:
+            return post
+        else:
+            self.client.broadcast(post)

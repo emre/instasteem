@@ -11,12 +11,6 @@ class IntegrationTest(unittest.TestCase):
         p = InstagramPostParser(TEST_POST)
         images = p.extract_images()
         self.assertEqual(len(images), 2)
-        self.assertIn(
-            "https://instagram.fist1-1.fna.fbcdn.net/vp/0cd84e674b90ee4c4e98bd"
-            "efcaade34c/5CB71FF4/t51.2885-15/e35/47694741_544033789434599_2325"
-            "102288486633689_n.jpg?_nc_ht=instagram.fist1-1.fna.fbcdn.net",
-            images
-        )
 
     def test_metadata_parsing(self):
         p = InstagramPostParser(TEST_POST)

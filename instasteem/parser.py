@@ -31,7 +31,7 @@ class InstagramPostParser:
 
         return self
 
-    def extract_images_from_instagram_post(self, content=None):
+    def extract_images(self, content=None):
         """Extracts image urls from an Instagram post.
 
         :param content: (str): HTML content of the post.

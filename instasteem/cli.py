@@ -38,7 +38,7 @@ def post(url, steem_username=None, tags=None, include_metadata=None):
     if not metadata:
         click.echo("Couldn't fetch the metadata.", err=True)
         sys.exit()
-    images = parser.extract_images_from_instagram_post()
+    images = parser.extract_images()
     if not len(images):
         click.echo("Couldn't fetch the image(s).", err=True)
         sys.exit()
